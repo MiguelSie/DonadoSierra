@@ -25,11 +25,17 @@ The RASD provides a full formal specification of the S&C platform. It covers:
 - **Non-Functional Requirements** — performance targets, design constraints (GDPR, WCAG, ISO 8601), and software system attributes including reliability, availability, security, maintainability, and portability.
 - **Formal Analysis using Alloy** — a formal Alloy model representing the core entities and their relationships (universities, students, companies, internship offers, selection processes, and internships), with key constraints, facts, and execution examples.
 
-### 📄 DD — Design Document *(coming soon)*
+### 📄 DD — Design Document (Students & Companies)
 
-The Design Document will detail the architectural decisions, component design, and implementation guidelines derived from the RASD.
+The DD translates the RASD requirements into a concrete microservices-based system design. It covers:
 
----
+**Introduction** — purpose, scope, and definitions/acronyms grounding the design in the S&C platform's matchmaking domain.
+**Architectural Design** — high-level microservices overview (API Gateway, Load Balancer, Event Bus), a detailed component view of all 8 microservices (UserHandler, UserInfoAndOffers, SelectionProcessManager, InternshipManager, FeedbackSystem, RecommendationSystem, NotificationSystem), a deployment view across client/CDN/server layers, and 19 runtime sequence diagrams (SQ1–SQ19) covering registration through feedback.
+**Selected Architectural Styles and Patterns** — justification for microservices, API Gateway, service discovery, event sourcing, security, and communication patterns.
+**User Interface Design** — mockups for the landing page, sign-up flow, login, internship search, student dashboard/profile, and company dashboard/applicant management.
+**Requirements Traceability** — maps each RASD requirement (R1–R31) to the specific design components that implement it.
+**Implementation, Integration and Test Plan** — feature identification (F1–F9), bottom-up integration strategy with diagrams per feature, a full system overview diagram, and the system testing strategy (functional, performance, usability, load, stress, UI testing).
+**Effort Spent** — hours logged per author across document chapters.
 
 ## Key Platform Features Specified
 
@@ -42,13 +48,4 @@ The Design Document will detail the architectural decisions, component design, a
 - Internship progress tracking for universities
 - End-of-internship feedback collection
 
----
-
-## Repository Structure
-
-```
-/
-├── RASD/
-│   └── RASDv1.pdf       # Requirements Analysis and Specification Document
-└── README.md
-```
+Both documents can be found in the DeliveryFolder, as well as the formal specification written in Alloy.
